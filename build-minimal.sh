@@ -18,7 +18,8 @@ esac
 
 
 yum install -y epel-release wget
-yum install -y glib2-devel expat-devel gcc make gcc-c++
+yum groupinstall -y  'development tools'
+yum install -y glib2-devel expat-devel
 
 cd
 wget https://github.com/libvips/libvips/releases/download/v8.10.0/vips-8.10.0.tar.gz
