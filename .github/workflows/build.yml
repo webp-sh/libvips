@@ -19,16 +19,6 @@ jobs:
         with:
           submodules: true
 
-      - name: Docker metadata
-        id: meta
-        uses: docker/metadata-action@v4
-        with:
-          images: |
-            ghcr.io/${{ github.event.repository.full_name }}
-            webpsh/libvips
-            webpsh/libvips
-            webpsh/libvips
-
       - name: Login to DockerHub
         uses: docker/login-action@v2
         with:
@@ -62,8 +52,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: webpsh/libvips:latest
 
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
