@@ -32,6 +32,7 @@ make && make install
 vips --version
 
 echo 'export PATH=$PATH:/usr/local/go/bin CGO_CFLAGS="-std=gnu99"' >> /etc/bashrc
+source /etc/bashrc
 
 cd
 URL="https://go.dev/dl/$FILE"
