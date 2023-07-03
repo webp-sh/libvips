@@ -31,14 +31,13 @@ cd vips-8.10.0
 make && make install
 vips --version
 
+echo 'export PATH=$PATH:/usr/local/go/bin CGO_CFLAGS="-std=gnu99"' >> /etc/bashrc
+
 cd
 URL="https://go.dev/dl/$FILE"
 wget $URL
 tar -C /usr/local -xzf $FILE && rm -f $FILE
-export PATH=$PATH:/usr/local/go/bin
 go version
-
-export CGO_CFLAGS="-std=gnu99"
 
 git clone https://github.com/webp-sh/webp_server_go
 cd webp_server_go
