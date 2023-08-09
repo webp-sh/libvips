@@ -5,10 +5,10 @@ ARCH=$(uname -m)
 
 case $ARCH in
     "x86_64")
-        FILE="go1.20.5.linux-amd64.tar.gz"
+        FILE="go1.21.0.linux-amd64.tar.gz"
         ;;
     "aarch64")
-        FILE="go1.20.5.linux-arm64.tar.gz"
+        FILE="go1.21.0.linux-arm64.tar.gz"
         ;;
     *)
         echo "Unsupported architecture: $ARCH"
